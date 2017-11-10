@@ -1,0 +1,31 @@
+plugins {
+    id "scala"
+    // test runner for scalatest
+    id "com.github.maiflai.scalatest" version "0.18"
+    // create a "fat jar" similar to the sbt assembly plugin
+    id "com.github.johnrengelman.shadow" version "2.0.1"
+    // make application runnable from the terminal with a `run` task
+    id "application"
+}
+
+// inform the 'application' plugin where the app entry point is located
+mainClassName = "com.lombardo.Main"
+
+shadowJar {
+    // creates a fat jar at build/libs/scala-gradle-starter-all.jar
+    baseName = "scala-gradle-starter"
+}
+
+repositories {
+    mavenCentral()
+}
+
+def scalaVersion = "2.11.8"
+
+dependencies {
+    compile "org.scala-lang:scala-library:$scalaVersion"
+    compile "org.scala-lang:scala-reflect:$scalaVersion"
+    testCompile "org.scalatest:scalatest_2.11:3.0.1"
+    // the test runner creates nifty html reports using this dependency
+    testRuntime "org.pegdown:pegdown:1.4.2"
+}
