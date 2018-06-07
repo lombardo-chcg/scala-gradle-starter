@@ -20,7 +20,7 @@ repositories {
     mavenCentral()
 }
 
-def scalaVersion = "2.11.8"
+def scalaVersion = "2.12.4"
 
 dependencies {
     compile "org.scala-lang:scala-library:$scalaVersion"
