@@ -25,7 +25,7 @@ def scalaVersion = "2.12.4"
 dependencies {
     compile "org.scala-lang:scala-library:$scalaVersion"
     compile "org.scala-lang:scala-reflect:$scalaVersion"
-    testCompile "org.scalatest:scalatest_2.11:3.0.1"
+    testCompile "org.scalatest:scalatest_2.12:3.0.1"
     // the test runner creates nifty html reports using this dependency
     testRuntime "org.pegdown:pegdown:1.4.2"
 }
