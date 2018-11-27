@@ -5,9 +5,14 @@ Basic scaffolding for a Scala project built with Gradle.
 ### How to use
 
 Execute the following commands to customize the project's base name.  Will not rename classes or packages in the project code.  
-*TODO: enable automated renaming of packages and classes too*
+
+*TODOs*
+- turn this into a script that runs on any OS 
 
 ```
+# these commands are macOS specific!
+# see https://unix.stackexchange.com/questions/13711/differences-between-sed-on-mac-osx-and-other-standard-sed
+
 projectName="my-project"
 mkdir $projectName
 cd $projectName

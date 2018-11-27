@@ -1,7 +1,7 @@
 plugins {
     id "scala"
     // test runner for scalatest
-    id "com.github.maiflai.scalatest" version "0.18"
+    id "com.github.maiflai.scalatest" version "0.22"
     // create a "fat jar" similar to the sbt assembly plugin
     id "com.github.johnrengelman.shadow" version "2.0.1"
     // make application runnable from the terminal with a `run` task
@@ -20,12 +20,22 @@ repositories {
     mavenCentral()
 }
 
-def scalaVersion = "2.12.4"
+ext {
+    scalaVersion = "2.12.7"
+    scalacVersion = "2.12"
+    log4jVersion = "2.9.1"
+}
 
 dependencies {
     compile "org.scala-lang:scala-library:$scalaVersion"
     compile "org.scala-lang:scala-reflect:$scalaVersion"
-    testCompile "org.scalatest:scalatest_2.11:3.0.1"
-    // the test runner creates nifty html reports using this dependency
-    testRuntime "org.pegdown:pegdown:1.4.2"
+
+    // logging
+    compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
+    runtime "org.apache.logging.log4j:log4j-core:$log4jVersion"
+    runtime "org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion"
+
+    // test
+    testCompile "org.scalatest:scalatest_$scalacVersion:3.0.1"
+    testRuntime "org.pegdown:pegdown:1.4.2" // used by scalatest plugin to generate html reports
 }
