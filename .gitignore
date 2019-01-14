@@ -19,3 +19,4 @@ build/
 *.iws
 .*.sw?
 .idea
+out/
