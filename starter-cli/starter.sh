@@ -14,7 +14,6 @@ cd .. && mkdir $projectName && cd $_
 # Copy scala-gradle-starter into the project directory
 cp -r ../scala-gradle-starter/ .
 rm -rf .git
-rm -rf starter-cli
 
 # Update files for project name
 # We use awk here instead of sed as it has better POSIX support
