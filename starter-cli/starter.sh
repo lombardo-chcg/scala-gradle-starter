@@ -15,6 +15,8 @@ cd .. && pwd && ls && mkdir $projectName && cd $_
 cp -r ../scala-gradle-starter/ .
 rm -rf .git
 
+ls -latr
+
 # Update files for project name
 # We use awk here instead of sed as it has better POSIX support
 declare -a buildFiles=("build.gradle" 
