@@ -17,5 +17,5 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-   - ./gradle shadowjar
+   - "./starter-cli/starter.sh ci"
 
