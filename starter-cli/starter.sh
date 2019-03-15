@@ -9,12 +9,14 @@ set -eo pipefail
 projectName=$1
 
 # Move to the parent, create the project directory, and cd in
-cd .. && pwd && ls && mkdir $projectName && cd $_
+cd .. && pwd && ls && mkdir $projectName && cd $projectName
 
 # Copy scala-gradle-starter into the project directory
 cp -r ../scala-gradle-starter/ .
 rm -rf .git
 
+echo "******"
+pwd
 ls -latr
 
 # Update files for project name
