@@ -9,7 +9,7 @@ plugins {
 }
 
 // inform the 'application' plugin where the app entry point is located
-mainClassName = "com.lombardo.Main"
+mainClassName = "com.scala-gradle-starter.Main"
 
 shadowJar {
     // creates a fat jar at build/libs/scala-gradle-starter-all.jar
