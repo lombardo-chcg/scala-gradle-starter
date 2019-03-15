@@ -16,5 +16,5 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-   - "./starter-cli/starter.sh ci"
+   - "./starter-cli/starter.sh 'build-ci'"
 

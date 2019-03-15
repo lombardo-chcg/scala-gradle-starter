@@ -6,7 +6,7 @@ set -eo pipefail
   echo 'USAGE: ./starter-cli/starter.sh "myproject"'
 }
 
-projectName=$1
+projectName="$1"
 
 # Move to the parent, create the project directory, and cd in
 cd .. && pwd && ls && mkdir $projectName && cd $projectName
@@ -18,7 +18,7 @@ rm -rf .git
 echo "******"
 pwd
 ls -latr
-
+echo "******"
 # Update files for project name
 # We use awk here instead of sed as it has better POSIX support
 declare -a buildFiles=("build.gradle" 
