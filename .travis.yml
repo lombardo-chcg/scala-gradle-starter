@@ -1,8 +1,7 @@
 language: scala
 install: true
 scala:
-   - 2.11.11
-   - 2.12.2
+   - 2.12.7
 
 jdk: 
    - openjdk8
