@@ -1,28 +1,8 @@
-# gradle + scala project starter
-![travis status](https://travis-ci.com/lombardo-chcg/scala-gradle-starter.svg?branch=master)
-
-A utility to spawn fresh Gradle/Scala projects
-
-- scala 2.12.8
-- gradle wrapper 4.10.2 
-- dockerfile
-- scalatest
-- log4j2
-
-### How to use
-
-1. Clone this project into a directory of your choosing.
-2. Run the starter script and respond to the prompts:
-```sh
-./starter-cli/starter.sh
-```
-The starter will bootstrap a new project in a new local directory.
-3. Liftoff 🚀
-
+# scala-gradle-starter
 
 ### Building
 
-The starter script runs a few `./gradlew` tasks as the last step in the setup. Additional builds, testing, and 
+The starter script runs a few `./gradlew` tasks as the last step in the setup. Additional builds, testing, and
 bundling can be had by running the following `./gradlew` tasks:
 ```
 # Run tests
@@ -35,7 +15,7 @@ bundling can be had by running the following `./gradlew` tasks:
 ./gradlew clean run
 ```
 
-### IDE Tips 
+### IDE Tips
 
 If using IntelliJ IDEA:
 * close any existing projects to arrive at the "Welcome" menu
@@ -55,3 +35,6 @@ docker build -t myproject .
 # Run the docker image
 docker run myproject:latest
 ```
+
+--
+bootstrapped with [https://github.com/lombardo-chcg/scala-gradle-starter](https://github.com/lombardo-chcg/scala-gradle-starter)
