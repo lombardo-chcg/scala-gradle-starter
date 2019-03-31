@@ -16,5 +16,5 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-   - "./gradlew check"
+   - "./gradlew test shadowJar run"
 
