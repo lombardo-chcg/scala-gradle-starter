@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8-jre-slim
 
 ADD build/libs/scala-gradle-starter-all.jar /usr/local/scala-gradle-starter-all.jar
 

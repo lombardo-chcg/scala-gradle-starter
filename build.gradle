@@ -3,13 +3,13 @@ plugins {
     // test runner for scalatest
     id "com.github.maiflai.scalatest" version "0.22"
     // create a "fat jar" similar to the sbt assembly plugin
-    id "com.github.johnrengelman.shadow" version "2.0.1"
+    id "com.github.johnrengelman.shadow" version "4.0.2"
     // make application runnable from the terminal with a `run` task
     id "application"
 }
 
 // inform the 'application' plugin where the app entry point is located
-mainClassName = "com.scala-gradle-starter.Main"
+mainClassName = "com.starter.Main"
 
 shadowJar {
     // creates a fat jar at build/libs/scala-gradle-starter-all.jar
@@ -21,7 +21,7 @@ repositories {
 }
 
 ext {
-    scalaVersion = "2.12.7"
+    scalaVersion = "2.12.8"
     scalacVersion = "2.12"
     log4jVersion = "2.9.1"
 }
