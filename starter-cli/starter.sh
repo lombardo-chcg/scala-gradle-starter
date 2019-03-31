@@ -3,8 +3,8 @@ set -eo pipefail
 
 read -p "Enter project name: " projectName
 
-projectNameMatcher='^[a-zA-Z0-9\-]$'
-[[ $projectName =~ $projectNameMatcher ]] && {
+projectNameMatcher='^[a-zA-Z0-9\-]*$'
+[[ $projectName =~ $projectNameMatcher ]] || {
   echo "Invalid project name.  Allowed characters are a-z, A-Z, 0-9 and hyphens.  ex: my-new-project"
   exit 1
 }
@@ -39,7 +39,7 @@ rm -rf .git
 declare -a buildFiles=("build.gradle"
                        "Dockerfile"
                        "src/main/scala/com/starter/Main.scala")
-#
+
 for file in "${buildFiles[@]}"
 do
   awk -v name="$projectName" 'gsub(/scala\-gradle\-starter/, name)1' "$PWD/$file" > "$PWD/${file}_tmp" \
@@ -48,11 +48,11 @@ done
 
 
 ## Update package name
-declare -a srcFiles=("src/main/scala/com/starter/Main.scala"
-                     "src/test/scala/com/starter/SampleTest.scala"
-                     "build.gradle")
-#
-[[ "$packageName" -ne "$defaultPkg" ]] && {
+[[ "$packageName" != "$defaultPkg" ]] && {
+  declare -a srcFiles=("src/main/scala/com/starter/Main.scala"
+                       "src/test/scala/com/starter/SampleTest.scala"
+                       "build.gradle")
+
   for file in "${srcFiles[@]}"
     do
       awk -v name="$packageName" 'gsub(/com\.starter/, name)1' "$PWD/$file" > "$PWD/${file}_tmp" \
@@ -61,10 +61,26 @@ declare -a srcFiles=("src/main/scala/com/starter/Main.scala"
 
   # Rename source and test directories
   packageToPath=$(echo "$packageName" | tr '.' '/')
-  mkdir -p "src/main/scala/$packageToPath"
-  mkdir -p "src/test/scala/$packageToPath"
-  mv src/main/scala/com/starter "src/main/scala/$packageToPath"
-  mv src/test/scala/com/starter "src/test/scala/$packageToPath"
+  srcDir="src/main/scala/$packageToPath"
+  testDir="src/test/scala/$packageToPath"
+  SRC_TMP="_tmp_src"
+  TEST_TMP="_tmp_test"
+
+  mkdir "$SRC_TMP"
+  mkdir "$TEST_TMP"
+  mv src/main/scala/com/starter/* "$SRC_TMP"
+  mv src/test/scala/com/starter/* "$TEST_TMP"
+
+  rm -rf src/main/scala/com
+  rm -rf src/test/scala/com
+
+  mkdir -p "$srcDir"
+  mkdir -p "$testDir"
+
+  mv "$SRC_TMP"/* "$srcDir"
+  mv "$TEST_TMP"/* "$testDir"
+  rm -rf "$SRC_TMP"
+  rm -rf "$TEST_TMP"
 }
 
 ## Eject the starter
@@ -73,10 +89,10 @@ rm -rf starter-cli
 ## Init git and make first commit
 git init
 git add .
-git commit -m "Initialized $projectName"
+git commit -m "Initialize $projectName"
 
-## Run gradle with a build
-./gradlew check run
+## Run gradle tasks
+./gradlew check shadowJar run
 
 echo -e "\nSuccess!  Project created.\n"
 echo "'cd ../$projectName' to begin using it."
