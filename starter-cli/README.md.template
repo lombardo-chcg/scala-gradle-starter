@@ -1,9 +1,7 @@
 # scala-gradle-starter
 
-### Building
+### Building & Testing
 
-The starter script runs a few `./gradlew` tasks as the last step in the setup. Additional builds, testing, and
-bundling can be had by running the following `./gradlew` tasks:
 ```
 # Run tests
 ./gradlew clean test
