@@ -31,7 +31,7 @@ cd .. && mkdir $projectName && cd $projectName
 echo "creating new Scala Gradle project at $(pwd)"
 
 # Copy scala-gradle-starter into the project directory
-cp -r ../scala-gradle-starter/ .
+cp -r ../scala-gradle-starter/. ./
 rm -rf .git
 
 ## Update files for project name
