@@ -1,4 +1,4 @@
-package com.scala-gradle-starter
+package com.starter
 
 import org.apache.logging.log4j.LogManager
 

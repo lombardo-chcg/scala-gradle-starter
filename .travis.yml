@@ -1,9 +1,9 @@
 language: scala
 install: true
 scala:
-   - 2.12.7
+   - 2.12.8
 
-jdk: 
+jdk:
    - openjdk8
 
 before_cache:
@@ -16,5 +16,5 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-   - "./starter-cli/starter.sh 'build-ci'"
+   - "./gradlew check"
 

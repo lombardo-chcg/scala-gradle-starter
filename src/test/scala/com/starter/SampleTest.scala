@@ -1,4 +1,4 @@
-package com.lombardo
+package com.starter
 
 import org.scalatest.{FlatSpec, Matchers}
 

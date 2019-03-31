@@ -1,12 +1,18 @@
-# gradle/scala project starter
+# gradle + scala project starter
 
-Basic scaffolding for a Scala project built with Gradle.
+A utility to spawn fresh Gradle/Scala projects!  
+- scala 2.12.8
+- gradle 5.x
+- dockerfile
+- scalatest
+- log4j
 
 ### How to use
 
 1. Clone this project into a directory of your choosing.
 2. Run the starter script with the name of your project as an argument (e.g. `./starter-cli/starter.sh myproject`).
-3. Profit 💰
+3. By default your project will be created in a new directory which is a "sibling" of the project starter directory.
+
 
 ### Building
 
