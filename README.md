@@ -16,7 +16,8 @@ A utility to spawn fresh Gradle/Scala projects
 ```sh
 ./starter-cli/starter.sh
 ```
-The starter will bootstrap a new project in a new local directory.
+The starter will bootstrap a fresh project in a new local directory.
+
 3. Liftoff 🚀
 
 
