@@ -1,23 +1,25 @@
 # gradle + scala project starter
+![travis status](https://travis-ci.com/lombardo-chcg/scala-gradle-starter.svg?branch=master)
 
-A utility to spawn fresh Gradle/Scala projects!  
+A utility to spawn fresh Gradle/Scala projects
+
 - scala 2.12.8
-- gradle 5.x
+- gradle wrapper 4.10.2 
 - dockerfile
 - scalatest
-- log4j
+- log4j2
 
 ### How to use
 
 1. Clone this project into a directory of your choosing.
-2. Run the starter script with the name of your project as an argument (e.g. `./starter-cli/starter.sh myproject`).
-3. By default your project will be created in a new directory which is a "sibling" of the project starter directory.
+2. Run the starter script and follow prompts. A new Scala project will be created in a new local directory.
+3. Liftoff 🚀
 
 
 ### Building
 
-The starter script runs a `./gradlew shadowjar` as the last step in the setup. Additional builds, testing, and 
-bundling can be had by running the following commands:
+The starter script runs a few `./gradlew` tasks as the last step in the setup. Additional builds, testing, and 
+bundling can be had by running the following `./gradlew` tasks:
 ```
 # Run tests
 ./gradlew clean test
