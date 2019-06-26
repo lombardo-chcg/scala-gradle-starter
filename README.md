@@ -4,7 +4,7 @@
 A utility to spawn fresh Gradle/Scala projects
 
 - scala 2.12.8
-- gradle wrapper 4.10.2 
+- gradle wrapper 5.4.1
 - dockerfile
 - scalatest
 - log4j2
