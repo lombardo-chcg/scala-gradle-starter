@@ -1,9 +1,9 @@
 plugins {
     id "scala"
     // test runner for scalatest
-    id "com.github.maiflai.scalatest" version "0.22"
+    id "com.github.maiflai.scalatest" version "0.25"
     // create a "fat jar" similar to the sbt assembly plugin
-    id "com.github.johnrengelman.shadow" version "4.0.2"
+    id "com.github.johnrengelman.shadow" version "5.0.0"
     // make application runnable from the terminal with a `run` task
     id "application"
 }
@@ -37,5 +37,5 @@ dependencies {
 
     // test
     testCompile "org.scalatest:scalatest_$scalacVersion:3.0.1"
-    testRuntime "org.pegdown:pegdown:1.4.2" // used by scalatest plugin to generate html reports
+    testRuntime "org.pegdown:pegdown:1.6.0" // used by scalatest plugin to generate html reports
 }
